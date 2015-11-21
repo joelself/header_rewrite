@@ -75,8 +75,8 @@ app.route('/s/oiat01t5ifhx1y5/*')
         middleware.accessControl
     )
     .get(
-        middleware.fileRedirect('https://dl.dropbox.com'),
-        middleware.proxyPath('https://dl.dropbox.com')
+        middleware.fileRedirect('https://dl.dropboxusercontent.com'),
+        middleware.proxyPath('https://dl.dropboxusercontent.com')
     );
 // Public or private gist.
 app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
@@ -104,8 +104,8 @@ app.route('/:user/:repo/:branch/*')
         middleware.accessControl
     )
     .get(
-        middleware.fileRedirect('https://dl.dropbox.com'),
-        middleware.proxyPath('https://dl.dropbox.com')
+        middleware.fileRedirect('https://raw.githubusercontent.com'),
+        middleware.proxyPath('https://raw.githubusercontent.com')
     );
 
 // Stats API.
