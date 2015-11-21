@@ -7,7 +7,7 @@ var REGEX_GIST_URL = /^(https?):\/\/gist\.githubusercontent\.com\/(.+?\/[0-9a-f]
 var REGEX_RAW_URL  = /^(https?):\/\/raw\.github(?:usercontent)?\.com\/([^\/]+\/[^\/]+\/[^\/]+|[0-9A-Za-z-]+\/[0-9a-f]+\/raw)\/(.+\..+)/i;
 var REGEX_REPO_URL = /^(https?):\/\/github\.com\/(.+?)\/(.+?)\/(?:(?:blob|raw)\/)?(.+?\/.+)/i;
 var REGEX_DROPBOX_URL = /^(https?):\/\/www\.dropbox\.com\/s\/([a-z0-9]+?)\/(.+\.[^?]+)(\?.*)?/i;
-var REGEX_BITBUCKET_URL = /^(https?):\/\/bitbucket\.org\/(.*?)\/raw\/[a-f0-9]+\/(.+\..+)$/i;
+var REGEX_BITBUCKET_URL = /^(https?):\/\/bitbucket\.org\/(.*?)\/raw\/([a-f0-9]+)\/(.+\..+)$/i;
 
 var devEl  = doc.getElementById('url-dev');
 //var prodEl = doc.getElementById('url-prod');
@@ -56,7 +56,7 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_BITBUCKET_URL, '$1://' + devDomain + '/s/$2/$3');
+        devEl.value  = url.replace(REGEX_BITBUCKET_URL, '$1://' + devDomain + '/$2/raw/$3/$4');
         //prodEl.value = url.replace(REGEX_BITBUCKET_URL, '$1://' + cdnDomain + '/s/$2/$3');
 
         devEl.classList.add('valid');
