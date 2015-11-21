@@ -64,7 +64,20 @@ app.get('/stats.html', function (req, res) {
 // Don't allow requests for Google Webmaster Central verification files.
 app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
-
+// Repo file.
+app.route(/^\/s\/[0-9a-z]+\/.*/)
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://dl.dropbox.com'),
+        middleware.proxyPath('https://dl.dropbox.com')
+    );
 // Public or private gist.
 app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
     .all(

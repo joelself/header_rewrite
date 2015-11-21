@@ -6,6 +6,7 @@
 var REGEX_GIST_URL = /^(https?):\/\/gist\.githubusercontent\.com\/(.+?\/[0-9a-f]+\/raw\/(?:[0-9a-f]+\/)?.+\..+)$/i;
 var REGEX_RAW_URL  = /^(https?):\/\/raw\.github(?:usercontent)?\.com\/([^\/]+\/[^\/]+\/[^\/]+|[0-9A-Za-z-]+\/[0-9a-f]+\/raw)\/(.+\..+)/i;
 var REGEX_REPO_URL = /^(https?):\/\/github\.com\/(.+?)\/(.+?)\/(?:(?:blob|raw)\/)?(.+?\/.+)/i;
+var REGEX_DROPBOX_URL = /^(https?):\/\/dl.dropbox\.com\/s\/([a-z0-9]+?)\/(.+\.[^?]+)(\?.*)?/i;
 
 var devEl  = doc.getElementById('url-dev');
 var prodEl = doc.getElementById('url-prod');
@@ -41,7 +42,16 @@ urlEl.addEventListener('input', function () {
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
-    } else {
+    } else if(REGEX_DROPBOX_URL.test(url)) {
+        urlEl.classList.remove('invalid');
+        urlEl.classList.add('valid');
+
+        devEl.value  = url.replace(REGEX_DROPBOX_URL, '$1://' + devDomain + '/s/$2/$3');
+        prodEl.value = url.replace(REGEX_DROPBOX_URL, '$1://' + cdnDomain + '/s/$2/$3');
+
+        devEl.classList.add('valid');
+        prodEl.classList.add('valid');        
+    }else {
         urlEl.classList.remove('valid');
 
         if (url.length) {
