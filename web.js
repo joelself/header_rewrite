@@ -104,8 +104,8 @@ app.route('/:user/:repo/:branch/*')
         middleware.accessControl
     )
     .get(
-        middleware.fileRedirect('https://raw.githubusercontent.com'),
-        middleware.proxyPath('https://raw.githubusercontent.com')
+        middleware.fileRedirect('https://dl.dropbox.com'),
+        middleware.proxyPath('https://dl.dropbox.com')
     );
 
 // Stats API.
