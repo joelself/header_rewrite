@@ -65,7 +65,7 @@ app.get('/stats.html', function (req, res) {
 app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 // Repo file.
-app.route('/s/oiat01t5ifhx1y5/*')
+app.route('/s/oiat01t5ifhx1y5/Joel%27s%20Resume%20Long.pdf')
     .all(
         middleware.cdn,
         middleware.stats,
