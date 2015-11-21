@@ -5,15 +5,15 @@ var path = require('path');
 module.exports = {
     // Whether or not to automatically throttle and blacklist abusive requests.
     // This works best if `upstreamRequestLog` is also set.
-    autoThrottle: true,
+    autoThrottle: false,
 
     // Domain to use for CDN requests to RawGit.
-    cdnDomain: 'cdn.rawgit.com',
+    //cdnDomain: 'cdn.rawgit.com',
 
     // GitHub "username/repo" from which RawGit's own static assets should be
     // loaded via the CDN. Set this to a falsy value to disable loading static
     // assets from the CDN.
-    cdnRepo: 'rgrove/rawgit',
+    cdnRepo: 'joelself/header_rewrite',
 
     // Git tag that points to the GitHub commit from which RawGit's own static
     // assets should be loaded via the CDN. Set this to a falsy value to disable
@@ -21,7 +21,7 @@ module.exports = {
     cdnTag: 'cdn-20150903-1',
 
     // Domain to use for dev requests to RawGit.
-    devDomain: 'rawgit.com',
+    devDomain: 'headerrewrite.azurewebsites.net',
 
     // Whitelist of file extensions that will be proxied through RawGit. All
     // others will be redirected to raw.githubusercontent.com.
