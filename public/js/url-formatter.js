@@ -12,7 +12,7 @@ var REGEX_FILESANYWHERE_URL = /^(https?):\/\/personal\.filesanywhere\.com\/fatem
 var REGEX_LAUNCHPAD_URL = /^(https?):\/\/bazaar\.launchpad\.net\/~(.+?)\/(.+)$/i;
 
 var devEl  = doc.getElementById('url-dev');
-//var prodEl = doc.getElementById('url-prod');
+var prodEl = doc.getElementById('url-prod');
 var urlEl  = doc.getElementById('url');
 
 urlEl.addEventListener('input', function () {
