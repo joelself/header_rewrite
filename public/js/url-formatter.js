@@ -56,8 +56,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_BITBUCKET_URL, '$1//' + devDomain + '/$2/raw/$3/$4');
-        //prodEl.value = url.replace(REGEX_BITBUCKET_URL, '$1//' + cdnDomain + '/$2/raw/$3/$4');
+        devEl.value  = url.replace(REGEX_BITBUCKET_URL, '$1://' + devDomain + '/$2/raw/$3/$4');
+        //prodEl.value = url.replace(REGEX_BITBUCKET_URL, '$1://' + cdnDomain + '/$2/raw/$3/$4');
 
         devEl.classList.add('valid');
         //prodEl.classList.add('valid');        
