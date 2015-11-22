@@ -13,7 +13,7 @@ module.exports = {
     // GitHub "username/repo" from which RawGit's own static assets should be
     // loaded via the CDN. Set this to a falsy value to disable loading static
     // assets from the CDN.
-    cdnRepo: 'joelself/header_rewrite',
+    cdnRepo: 'joelself/rewriteeverything',
 
     // Git tag that points to the GitHub commit from which RawGit's own static
     // assets should be loaded via the CDN. Set this to a falsy value to disable

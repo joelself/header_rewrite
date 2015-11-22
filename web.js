@@ -97,6 +97,36 @@ app.route(/\/(.*?)\/raw\/([a-f0-9]+?)\/(.*)/)
         middleware.proxyPath('https://bitbucket.org')
     );
     
+// FilesAnywhere file.
+app.route(/\/fatemp\/[0-9]+?\/[0-9]+?\/[0-9A-Z]+?\/(.*)/)
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://personal.filesanywhere.com'),
+        middleware.proxyPath('https://personal.filesanywhere.com')
+    );
+
+// Launchpad file.
+app.route(/\/~(.+?):\/(.+)/)
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://bazaar.launchpad.net'),
+        middleware.proxyPath('https://bazaar.launchpad.net')
+    );
+
 // Repo file.
 app.route('/:user/:repo/:branch/*')
     .all(
