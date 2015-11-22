@@ -1,7 +1,7 @@
-RawGit
+RawEverything
 ======
 
-This is the source code behind <https://rawgit.com/>.
+This is the source code behind <http://raweverything.dislocal.com/>.
 
 
 Installing
@@ -11,17 +11,17 @@ Installing
 
 2. Clone this git repo (fork it first if you plan to make changes).
 
-        git clone git://github.com/rgrove/rawgit.git
+        git clone git://github.com/joelself/raweverything.git
 
 3. Install dependencies.
 
-        cd rawgit && npm install
+        cd raweverything && npm install
 
 4. Start the local server.
 
         npm start
 
-5. Browse to <http://localhost:5000/> and you should see RawGit in action.
+5. Browse to <http://localhost:5000/> and you should see RawEverything in action.
 
 
 Running Tests
@@ -42,8 +42,9 @@ before working on it.
 
 License
 -------
+Copyright (c) 2015 Joel Self <http://dislocal.com/en/Contacts>.
 
-Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
+Original code: Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
