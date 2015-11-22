@@ -13,6 +13,8 @@ var hbs        = require('express-handlebars');
 var middleware = require('./lib/middleware');
 var path       = require('path');
 var stats      = require('./lib/stats');
+var https = require('https');
+var http = require('http');
 
 // -- Configure Express --------------------------------------------------------
 var app = express();
@@ -80,6 +82,21 @@ app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
         middleware.proxyPath('https://gist.githubusercontent.com')
     );
 
+// Bitbucket file.
+app.route(/\/(.*?)\/raw\/([a-f0-9]+?)\/(.*)/)
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://bitbucket.org'),
+        middleware.proxyPath('https://bitbucket.org')
+    );
+    
 // Repo file.
 app.route('/:user/:repo/:branch/*')
     .all(
@@ -108,21 +125,6 @@ app.route('/s/:randomstring/*')
     .get(
         middleware.fileRedirect('https://dl.dropboxusercontent.com'),
         middleware.proxyPath('https://dl.dropboxusercontent.com')
-    );
-
-// Dropbox file.
-app.route(/\/(.*?)\/raw\/([a-f0-9]+?)\/(.*)/)
-    .all(
-        middleware.cdn,
-        middleware.stats,
-        middleware.security,
-        middleware.noRobots,
-        middleware.autoThrottle,
-        middleware.accessControl
-    )
-    .get(
-        middleware.fileRedirect('https://bitbucket.org'),
-        middleware.proxyPath('https://bitbucket.org')
     );
 
 // Stats API.
