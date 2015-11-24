@@ -86,8 +86,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_LINKEDIN_URL, 'http://' + devDomain + '/in/$2');
-        prodEl.value = url.replace(REGEX_LINKEDIN_URL, 'http://' + cdnDomain + '/in/$2');
+        devEl.value  = url.replace(REGEX_LINKEDIN_URL, '$1' + devDomain + '/in/$2');
+        prodEl.value = url.replace(REGEX_LINKEDIN_URL, '$1' + cdnDomain + '/in/$2');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');        
