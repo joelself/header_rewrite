@@ -19,7 +19,7 @@ var http = require('http');
 // -- Configure Express --------------------------------------------------------
 var app = express();
 
-app.disable('x-powered-by');
+app.disable('x-powered-by');	
 
 if (app.get('env') === 'development') {
     app.use(require('morgan')('dev'));
@@ -112,6 +112,21 @@ app.route(/\/fatemp\/[0-9]+?\/[0-9]+?\/[0-9A-Z]+?\/(.*)/)
         middleware.proxyPath('https://personal.filesanywhere.com')
     );
 
+// FilesAnywhere file.
+app.route(/\/in\/(.*)/)
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://www.linkedin.com'),
+        middleware.proxyPath('https://www.linkedin.com')
+    );
+	
 // Launchpad file.
 app.route(/\/~(.+?):\/(.+)/)
     .all(

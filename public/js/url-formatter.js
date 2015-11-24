@@ -10,6 +10,7 @@ var REGEX_DROPBOX_URL = /^(https?):\/\/www\.dropbox\.com\/s\/([a-z0-9]+?)\/(.+\.
 var REGEX_BITBUCKET_URL = /^(https?):\/\/bitbucket\.org\/(.*?)\/raw\/([a-f0-9]+)\/(.+\..+)$/i;
 var REGEX_FILESANYWHERE_URL = /^(https?):\/\/personal\.filesanywhere\.com\/fatemp\/([0-9]+?)\/([0-9]+?)\/([0-9A-Z]+?)\/(.*)$/i;
 var REGEX_LAUNCHPAD_URL = /^(https?):\/\/bazaar\.launchpad\.net\/~(.+?)\/(.+)$/i;
+var REGEX_LINKEDIN_URL = /^(https?):\/\/www\.linkedin\.com\/in\/(.*)$/i;
 
 var devEl  = doc.getElementById('url-dev');
 var prodEl = doc.getElementById('url-prod');
@@ -78,6 +79,15 @@ urlEl.addEventListener('input', function () {
 
         devEl.value  = url.replace(REGEX_LAUNCHPAD_URL, '$1' + devDomain + '/~$2/$3');
         prodEl.value = url.replace(REGEX_LAUNCHPAD_URL, '$1' + cdnDomain + '/~$2/$3');
+
+        devEl.classList.add('valid');
+        prodEl.classList.add('valid');        
+    }    else if(REGEX_LINKEDIN_URL.test(url)) {
+        urlEl.classList.remove('invalid');
+        urlEl.classList.add('valid');
+
+        devEl.value  = url.replace(REGEX_LINKEDIN_URL, 'http://' + devDomain + '/in/$2');
+        prodEl.value = url.replace(REGEX_LINKEDIN_URL, 'http://' + cdnDomain + '/in/$2');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');        
