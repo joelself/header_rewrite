@@ -1,7 +1,7 @@
 RawEverything
 ======
 
-This is the source code behind <http://raweverything.dislocal.com/>.
+This is the source code behind <https://raweverything.dislocal.com/>.
 
 
 Installing
