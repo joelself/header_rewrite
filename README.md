@@ -42,7 +42,7 @@ before working on it.
 
 License
 -------
-Copyright (c) 2015 Joel Self <http://dislocal.com/en/Contacts>.
+Copyright (c) 2015 Joel Self (joel@dislocal.com).
 
 Original code: Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
 
