@@ -23,8 +23,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_RAW_URL, '$1' + devDomain + '/$2/$3');
-        prodEl.value = url.replace(REGEX_RAW_URL, '$1' + cdnDomain + '/$2/$3');
+        devEl.value  = url.replace(REGEX_RAW_URL, '$1://' + devDomain + '/$2/$3');
+        prodEl.value = url.replace(REGEX_RAW_URL, '$1://' + cdnDomain + '/$2/$3');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
@@ -32,8 +32,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_REPO_URL, '$1' + devDomain + '/$2/$3/$4');
-        prodEl.value = url.replace(REGEX_REPO_URL, '$1' + cdnDomain + '/$2/$3/$4');
+        devEl.value  = url.replace(REGEX_REPO_URL, '$1://' + devDomain + '/$2/$3/$4');
+        prodEl.value = url.replace(REGEX_REPO_URL, '$1://' + cdnDomain + '/$2/$3/$4');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
@@ -41,8 +41,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_GIST_URL, '$1' + devDomain + '/$2');
-        prodEl.value = url.replace(REGEX_GIST_URL, '$1' + cdnDomain + '/$2');
+        devEl.value  = url.replace(REGEX_GIST_URL, '$1://' + devDomain + '/$2');
+        prodEl.value = url.replace(REGEX_GIST_URL, '$1://' + cdnDomain + '/$2');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
@@ -50,8 +50,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_DROPBOX_URL, '$1' + devDomain + '/s/$2/$3');
-        prodEl.value = url.replace(REGEX_DROPBOX_URL, '$1' + cdnDomain + '/s/$2/$3');
+        devEl.value  = url.replace(REGEX_DROPBOX_URL, '$1://' + devDomain + '/s/$2/$3');
+        prodEl.value = url.replace(REGEX_DROPBOX_URL, '$1://' + cdnDomain + '/s/$2/$3');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');        
@@ -59,8 +59,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_BITBUCKET_URL, '$1' + devDomain + '/$2/raw/$3/$4');
-        prodEl.value = url.replace(REGEX_BITBUCKET_URL, '$1' + cdnDomain + '/$2/raw/$3/$4');
+        devEl.value  = url.replace(REGEX_BITBUCKET_URL, '$1://' + devDomain + '/$2/raw/$3/$4');
+        prodEl.value = url.replace(REGEX_BITBUCKET_URL, '$1://' + cdnDomain + '/$2/raw/$3/$4');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');        
@@ -68,8 +68,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_FILESANYWHERE_URL, '$1' + devDomain + '/fatemp/$2/$3/$4/$5');
-        prodEl.value = url.replace(REGEX_FILESANYWHERE_URL, '$1' + cdnDomain + '/fatemp/$2/$3/$4/$5');
+        devEl.value  = url.replace(REGEX_FILESANYWHERE_URL, '$1://' + devDomain + '/fatemp/$2/$3/$4/$5');
+        prodEl.value = url.replace(REGEX_FILESANYWHERE_URL, '$1://' + cdnDomain + '/fatemp/$2/$3/$4/$5');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');        
@@ -77,8 +77,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_LAUNCHPAD_URL, '$1' + devDomain + '/~$2/$3');
-        prodEl.value = url.replace(REGEX_LAUNCHPAD_URL, '$1' + cdnDomain + '/~$2/$3');
+        devEl.value  = url.replace(REGEX_LAUNCHPAD_URL, '$1://' + devDomain + '/~$2/$3');
+        prodEl.value = url.replace(REGEX_LAUNCHPAD_URL, '$1://' + cdnDomain + '/~$2/$3');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');        
@@ -86,8 +86,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_LINKEDIN_URL, '$1' + devDomain + '/in/$2');
-        prodEl.value = url.replace(REGEX_LINKEDIN_URL, '$1' + cdnDomain + '/in/$2');
+        devEl.value  = url.replace(REGEX_LINKEDIN_URL, '$1://' + devDomain + '/in/$2');
+        prodEl.value = url.replace(REGEX_LINKEDIN_URL, '$1://' + cdnDomain + '/in/$2');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');        
