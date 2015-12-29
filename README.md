@@ -3,7 +3,7 @@ RawEverything
 
 This is the source code behind <http://raweverything.dislocal.com/>.
 
-
+[![ghit.me](https://ghit.me/badge.svg?repo=joelself/raweverything)](https://ghit.me/repo/joelself/raweverything)
 Installing
 ----------
 
