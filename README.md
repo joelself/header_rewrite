@@ -1,7 +1,7 @@
 RawEverything
 ======
 
-This is the source code behind <http://raweverything.dislocal.com/>.
+This is the source code behind <https://raweverything.dislocal.com/>.
 
 [![ghit.me](https://ghit.me/badge.svg?repo=joelself/raweverything)](https://ghit.me/repo/joelself/raweverything)
 Installing
@@ -42,7 +42,7 @@ before working on it.
 
 License
 -------
-Copyright (c) 2015 Joel Self <http://dislocal.com/en/Contacts>.
+Copyright (c) 2015 Joel Self (joel@dislocal.com).
 
 Original code: Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
 
