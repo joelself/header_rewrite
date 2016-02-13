@@ -42,7 +42,7 @@ before working on it.
 
 License
 -------
-Copyright (c) 2016 Joel Self <http://jself.io/en/Contacts>.
+Copyright (c) 2016 Joel Self <https://jself.io/about-contact/>>.
 
 Original code: Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
 
