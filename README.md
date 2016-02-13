@@ -1,7 +1,7 @@
 RawEverything
 ======
 
-This is the source code behind <http://raweverything.dislocal.com/>.
+This is the source code behind <http://raweverything.jself.io/>.
 
 
 Installing
@@ -42,7 +42,7 @@ before working on it.
 
 License
 -------
-Copyright (c) 2015 Joel Self <http://dislocal.com/en/Contacts>.
+Copyright (c) 2016 Joel Self <http://jself.io/en/Contacts>.
 
 Original code: Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
 
