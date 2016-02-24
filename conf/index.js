@@ -5,10 +5,10 @@ var path = require('path');
 module.exports = {
     // Whether or not to automatically throttle and blacklist abusive requests.
     // This works best if `upstreamRequestLog` is also set.
-    autoThrottle: false,
+    autoThrottle: true,
 
     // Domain to use for CDN requests to RawGit.
-    cdnDomain: 'cdn.raweverything.jself.io',
+    cdnDomain: 'raw.azureedge.net',
 
     // GitHub "username/repo" from which RawGit's own static assets should be
     // loaded via the CDN. Set this to a falsy value to disable loading static
@@ -22,51 +22,6 @@ module.exports = {
 
     // Domain to use for dev requests to RawGit.
     devDomain: 'raweverything.jself.io',
-
-    // Whitelist of file extensions that will be proxied through RawGit. All
-    // others will be redirected to raw.githubusercontent.com.
-    //
-    // Requests to the cdnDomain will bypass this whitelist and proxy all file
-    // types. Please keep this list alphabetized.
-    extensionWhitelist: {
-        '.appcache'  : true,
-        '.coffee'    : true,
-        '.css'       : true,
-        '.csv'       : true,
-        '.eot'       : true,
-        '.geojson'   : true,
-        '.handlebars': true,
-        '.hbs'       : true,
-        '.htm'       : true,
-        '.html'      : true,
-        '.js'        : true,
-        '.json'      : true,
-        '.jsonld'    : true,
-        '.kml'       : true,
-        '.md'        : true,
-        '.n3'        : true,
-        '.nt'        : true,
-        '.otf'       : true,
-        '.owl'       : true,
-        '.pdf'       : true,
-        '.rdf'       : true,
-        '.rss'       : true,
-        '.svg'       : true,
-        '.swf'       : true,
-        '.ttc'       : true,
-        '.ttf'       : true,
-        '.ttl'       : true,
-        '.vtt'       : true,
-        '.woff'      : true,
-        '.woff2'     : true,
-        '.xht'       : true,
-        '.xhtml'     : true,
-        '.xml'       : true,
-        '.xsl'       : true,
-        '.xslt'      : true,
-        '.yaml'      : true,
-        '.yml'       : true
-    },
 
     // Whether we're running in a production environment (true) or
     // development/test (false).
@@ -124,7 +79,7 @@ module.exports = {
     // if you use monitoring tools that ping a given URL every few minutes and
     // you don't want them affecting stats rankings.
     statsIgnorePaths: {
-        '/rgrove/rawgit/master/web.js': true
+        '/opt/raweverything/web.js': true
     },
 
     // If RawGit is fronted by Nginx, Apache, or something else that generates
@@ -134,7 +89,7 @@ module.exports = {
     // If this is not set or if the file doesn't exist or isn't readable, RawGit
     // will track requests internally (but this may result in inaccurate stats
     // if you're fronting RawGit with a caching proxy).
-    upstreamRequestLog: '/data/logs/rawgit.com-access.log',
+    upstreamRequestLog: '/var/log/raweverything/test-access.log',
 
     // Number of historical log entries to parse from the upstream request log
     // on startup. This is useful in order to retain recent stats after the
