@@ -1,6 +1,6 @@
 RawEverything
 ======
-
+### ***Now actually uses a CDN for CDN files! It uses Microsoft Azure's azureedge.net CDN.***
 This is the source code behind <https://raweverything.jself.io/>.
 
 [![ghit.me](https://ghit.me/badge.svg?repo=joelself/raweverything)](https://ghit.me/repo/joelself/raweverything)
