@@ -1,5 +1,6 @@
 RawEverything
 ======
+### 2016/02/28: Added support for GitLab.com raw files!
 ### ***Now actually uses a CDN for CDN files! It uses Microsoft Azure's azureedge.net CDN.***
 This is the source code behind <https://raweverything.jself.io/>.
 
@@ -44,7 +45,7 @@ License
 -------
 Copyright (c) 2016 Joel Self <https://jself.io/about-contact/>>.
 
-Original code: Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
+Original code: Copyright (c) 2016 Ryan Grove (ryan@wonko.com).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
