@@ -82,6 +82,7 @@ app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
         middleware.proxyPath('https://gist.githubusercontent.com')
     );
 
+
 // Bitbucket file.
 app.route(/\/(.*?)\/raw\/([a-f0-9]+?)\/(.*)/)
     .all(
@@ -96,7 +97,22 @@ app.route(/\/(.*?)\/raw\/([a-f0-9]+?)\/(.*)/)
         middleware.fileRedirect('https://bitbucket.org'),
         middleware.proxyPath('https://bitbucket.org')
     );
-    
+
+// gitlab.com file
+app.route(/\/.+?\/.+?\/raw\/.+\/.+/)
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://gitlab.com'),
+        middleware.proxyPath('https://gitlab.com')
+    );
+
 // FilesAnywhere file.
 app.route(/\/fatemp\/[0-9]+?\/[0-9]+?\/[0-9A-Z]+?\/(.*)/)
     .all(

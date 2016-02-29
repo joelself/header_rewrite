@@ -11,6 +11,7 @@ var REGEX_BITBUCKET_URL = /^(https?):\/\/bitbucket\.org\/(.*?)\/raw\/([a-f0-9]+)
 var REGEX_FILESANYWHERE_URL = /^(https?):\/\/personal\.filesanywhere\.com\/fatemp\/([0-9]+?)\/([0-9]+?)\/([0-9A-Z]+?)\/(.*)$/i;
 var REGEX_LAUNCHPAD_URL = /^(https?):\/\/bazaar\.launchpad\.net\/~(.+?)\/(.+)$/i;
 var REGEX_LINKEDIN_URL = /^(https?):\/\/www\.linkedin\.com\/in\/(.*)$/i;
+var REGEX_RAWLABS_URL= /^(https?):\/\/gitlab.com\/(.+?)\/(.+?)\/raw\/(.+?)\/(.*)/i;
 
 var devEl  = doc.getElementById('url-dev');
 var prodEl = doc.getElementById('url-prod');
@@ -90,7 +91,16 @@ urlEl.addEventListener('input', function () {
         prodEl.value = url.replace(REGEX_LINKEDIN_URL, '$1://' + cdnDomain + '/in/$2');
 
         devEl.classList.add('valid');
-        prodEl.classList.add('valid');        
+        prodEl.classList.add('valid');
+    }  else if (REGEX_RAWLABS_URL.test(url)) {
+        urlEl.classList.remove('invalid');
+        urlEl.classList.add('valid');
+
+        devEl.value = url.replace(REGEX_RAWLABS_URL, '$1://' + devDomain + '/$2/$3/raw/$4/$5');
+        prodEl.value = url.replace(REGEX_RAWLABS_URL, '$1://' + cdnDomain + '/$2/$3/raw/$4/$5');
+        
+        devEl.classList.add('valid');
+        prodEl.classList.add('valid');
     } else {
         urlEl.classList.remove('valid');
 
